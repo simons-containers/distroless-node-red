@@ -3,6 +3,7 @@ FROM ghcr.io/simons-containers/distroless-nodejs:25.9.0
 ARG NODERED_VERSION
 
 RUN ["node", "-e", "require('child_process').execFileSync('node',['npm','install','-g','node-red@'+process.env.NODERED_VERSION],{stdio:'inherit'})"]
+RUN ["node", "npm", "install", "-g", "@node-red-contrib-themes/theme-collection"]
 
 COPY ./passwd /etc/passwd
 COPY ./shadow /etc/shadow
