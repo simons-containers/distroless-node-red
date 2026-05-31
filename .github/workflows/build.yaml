@@ -14,6 +14,6 @@ jobs:
     with:
       registry: ghcr.io/simons-containers
       image: distroless-node-red
-      appname: node-red
+      appname: nodered
     secrets:
       ghcr_token: ${{ secrets.GITHUB_TOKEN }}
