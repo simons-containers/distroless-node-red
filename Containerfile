@@ -1,4 +1,4 @@
-FROM ghcr.io/simons-containers/distroless-nodejs:25.9.0
+FROM ghcr.io/simons-containers/distroless-nodejs:26.3.0
 
 ARG NODERED_VERSION
 
