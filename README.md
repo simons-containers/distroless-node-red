@@ -1,3 +1,7 @@
+![Latest](https://ghcr-badge.egpl.dev/simons-containers/distroless-node-red/latest_tag?ignore=latest,sha256*&label=latest)  
+![Size](https://ghcr-badge.egpl.dev/simons-containers/distroless-node-red/size?tag=latest)  
+![Tags](https://ghcr-badge.egpl.dev/simons-containers/distroless-node-red/tags?ignore=latest,sha256*)  
+
 # Distroless Node-RED container
 
 Bare-bones distroless Node-RED container image.
