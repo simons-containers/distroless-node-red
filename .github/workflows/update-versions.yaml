@@ -25,7 +25,7 @@ jobs:
             set -uo pipefail
             NODERED=$(git ls-remote --tags https://github.com/node-red/node-red.git \
               | awk -F/ '! /beta/ {gsub("v", ""); print $3}' \
-              | sort -V | tail -1
+              | sort -V | tail -1)
             
             yq -i ".nodered= \"$NODERED\"" versions.yaml
             git diff versions.yaml
