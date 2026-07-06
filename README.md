@@ -1,3 +1,5 @@
+[![Current Version](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/release.svg)](https://github.com/simons-containers/distroless-node-red/pkgs/container/distroless-node-red) [![Tags](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/tags.svg)](https://github.com/simons-containers/distroless-node-red/pkgs/container/distroless-node-red) <br> ![Current Size](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/size.svg) ![Wasted Size](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/wasted.svg) ![Efficiency](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/efficiency.svg) <br> ![Critical](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/critical.svg) ![High](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/high.svg) ![Medium](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/medium.svg) ![Low](https://raw.githubusercontent.com/simons-containers/distroless-node-red/badges/.badges/main/low.svg) <br> [![Publish Workflow](https://img.shields.io/github/actions/workflow/status/simons-containers/distroless-node-red/deploy.yaml?label=Publish%20Workflow&logo=github)](https://github.com/simons-containers/distroless-node-red/actions/workflows/deploy.yaml) [![Update Workflow](https://img.shields.io/github/actions/workflow/status/simons-containers/distroless-node-red/update-versions.yaml?label=Update%20Workflow&logo=github)](https://github.com/simons-containers/distroless-node-red/actions/workflows/update-versions.yaml)
+
 # Distroless Node-RED container
 
 Bare-bones distroless Node-RED container image.
@@ -11,20 +13,6 @@ Example:
 ```bash
 docker run -it --rm -v ./data:/var/lib/nodered \
   ghcr.io/simons-containers/distroless-node-red:latest
-```
-
-## Building
-
-| Arg | Description |
-|---|---|
-| `NODERED_VERSION` | Version of Node-RED to use
-
-Build container using build-args from versions.yaml:
-
-```bash
-docker build -t \
-  distroless-node-red:$(yq -r .nodered versions.yaml) \
-  $(yq -r 'to_entries | .[] | "--build-arg \(.key | ascii_upcase)_VERSION=\(.value)"' versions.yaml) -f Containerfile .
 ```
 
 ## License
