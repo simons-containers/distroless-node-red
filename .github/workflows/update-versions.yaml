@@ -24,11 +24,18 @@ jobs:
           command: |
             set -uo pipefail
             NODERED=$(git ls-remote --tags https://github.com/node-red/node-red.git \
-              | awk -F/ '! /beta/ {gsub("v", ""); print $3}' \
+              |  awk -F/ '/\/[0-9\.]+$/ {print $3}' \
               | sort -V | tail -1)
-            
-            yq -i ".nodered= \"$NODERED\"" versions.yaml
-            git diff versions.yaml
+
+            : ${NODERED:?}
+  
+            jq \
+              --arg nodered "$NODERED" \
+              '
+                .nodered.version = $nodered
+              ' sources.json > tmp.json && mv tmp.json sources.json
+
+            git diff sources.json
           
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
