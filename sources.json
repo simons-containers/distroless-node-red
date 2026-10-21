@@ -1,6 +1,6 @@
 {
   "nodered": {
-    "version": "5.0.8",
+    "version": "5.0.9",
     "purl": "pkg:generic/node-red",
     "release": {
       "url_pattern": "https://www.npmjs.com/package/node-red/v/{version}"
